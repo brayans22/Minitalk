@@ -1,14 +1,10 @@
 #include "../headers/minitalk.h"
 
-void send_signal_bits(char character, pid_t pid_server)
+static void send_signal_bits(char character, pid_t pid_server)
 {
     int bits;
 
-    bits = 7;
-    // ojo con character d
-    // deberia ser un mensaje, dentro del while y es una palabra no una letra
-    // PID ES UN ENTERO 
-    //  PRINT BITS
+    bits = 7; 
     while (bits >= 0)
     {
         if ((character >> bits & 1) == 1)
