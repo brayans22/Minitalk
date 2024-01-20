@@ -21,5 +21,3 @@ This project consists of communication between a server and client through unix 
 ◼️ Language: C
 <br>
 ◼️ Compile: makefile
-
-
