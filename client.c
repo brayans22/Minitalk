@@ -35,7 +35,7 @@ static int	is_valid_arg(char *pid, char *msg)
 
 	r = 1;
 	i = -1;
-	if (pid[0] == '\0' || msg[0] == '\0')
+	if (msg[0] == '\0')
 		r = 0;
 	while (r == 1 && pid[++i])
 	{
