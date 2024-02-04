@@ -20,11 +20,23 @@ static void	send_signal_bits(char character, pid_t pid_server)
 	while (bits >= 0)
 	{
 		if ((character >> bits & 1) == 1)
-			kill(pid_server, SIGUSR1);
+		{
+			if (kill(pid_server, SIGUSR1) == ERROR)
+			{
+				ft_putendl_fd("Error | Kill Fails", 2);
+				break ;
+			}
+		}
 		else
-			kill(pid_server, SIGUSR2);
+		{
+			if (kill(pid_server, SIGUSR2) == ERROR)
+			{
+				ft_putendl_fd("Error | Kill Fails", 2);
+				break ;
+			}
+		}
 		--bits;
-		usleep(100);
+		usleep(350);
 	}
 }
 
